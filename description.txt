@@ -1,0 +1,11 @@
+Visualisation of DSA Algorithm is software developed to help 
+visualize the digital signature algorithm developed by 
+the NIST (National Institute Of Technology) as a part of 
+DSS (Digital Signature Standard). The software is 
+developed at School of Electrical Engineering of 
+University of Belgrade, Serbia as a thesis of student
+Nikola Maksimovic, supervised by prof Zarko Stanisavljevic.
+
+Version: 0.1
+Programmer: Nikola Maksimovic
+Mentor: prof Zarko Stanisavljevic
