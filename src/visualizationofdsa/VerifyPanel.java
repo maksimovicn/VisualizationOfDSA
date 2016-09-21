@@ -11,13 +11,13 @@ import javax.swing.JPanel;
 
 public class VerifyPanel extends JPanel {
 	
-	private JButton btnMsg;
-	private JButton btnS;
-	private JButton btnR;
-	private JButton btnH;
-	private JButton btnF3;
-	private JButton btnF4;
-	private JButton compare;
+	public JButton btnMsg;
+	public JButton btnS;
+	public JButton btnR;
+	public JButton btnH;
+	public JButton btnF3;
+	public JButton btnF4;
+	public JButton compare;
 	
 	private Dimension dim = new Dimension(450, 300);
     //public final ArrayList<Shape> shapes;
@@ -68,20 +68,43 @@ public class VerifyPanel extends JPanel {
 		grphcs.drawLine(110, 213, 210, 213);//s' to f3
 		grphcs.drawLine(210, 213, 205, 208);
 		grphcs.drawLine(210, 213, 205, 218);
+		
+		grphcs.drawString("q", 150, 163);//q and q to f3
+		grphcs.drawLine(160, 160, 210, 160);
+		grphcs.drawLine(210, 160, 205, 165);
+		grphcs.drawLine(210, 160, 205, 155);
 
-		grphcs.drawLine(290, 185, 440, 185);// f3 to f4
-		grphcs.drawLine(440, 185, 440, 155);
-		grphcs.drawLine(440, 155, 435, 160);
-		grphcs.drawLine(440, 155, 445, 160);
+		grphcs.drawLine(290, 185, 425, 185);// f3 to f4
+		grphcs.drawLine(425, 185, 425, 155);
+		grphcs.drawLine(425, 155, 420, 160);
+		grphcs.drawLine(425, 155, 430, 160);
 		
 		grphcs.drawLine(110, 237, 470, 237);//r to compare
 		grphcs.drawLine(465, 242, 470, 237);
 		grphcs.drawLine(465, 232, 470, 237);
+		grphcs.drawLine(455, 237, 455, 155);//r to f4
+		grphcs.drawLine(455, 155, 450, 160);
+		grphcs.drawLine(455, 155, 460, 160);
 		
 		grphcs.drawLine(525, 115, 525, 225);//emp to cmp
 		grphcs.drawLine(520, 220, 525, 225);
 		grphcs.drawLine(530, 220, 525, 225);
 		grphcs.drawLine(480, 115, 525, 115);//f4 to emp
+		
+		grphcs.drawString("y", 340, 95);
+		grphcs.drawLine(350, 92, 400, 92);
+		grphcs.drawLine(395, 87, 400, 92);
+		grphcs.drawLine(395, 97, 400, 92);
+		
+		grphcs.drawString("q", 340, 115);
+		grphcs.drawLine(350, 112, 400, 112);
+		grphcs.drawLine(400, 112, 395, 107);
+		grphcs.drawLine(400, 112, 395, 117);
+
+		grphcs.drawString("g", 340, 135);
+		grphcs.drawLine(350, 132, 400, 132);
+		grphcs.drawLine(400, 132, 395, 137);
+		grphcs.drawLine(400, 132, 395, 127);
 	}
 
 }

@@ -3,33 +3,39 @@ package visualizationofdsa;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
 public class StartingScreen {
 
+	//Main frame of a starting screen. Only operation on the frame is to start the visualization!
 	private JFrame frame;
 	
 	public StartingScreen() throws IOException {
 		initializeMainFrame();
 	}
 	
+	
 	private void initializeMainFrame() throws IOException {
 		frame = new JFrame("DSA Algorithm");
 		frame.setSize(600, 600);
+		frame.setLocationRelativeTo(null);
 		JButton button = new JButton("Start");
 		
 		button.addActionListener(new ActionListener() {
@@ -61,9 +67,7 @@ public class StartingScreen {
 		JScrollPane scrollDescription = new JScrollPane(description);
 		scrollDescription.setWheelScrollingEnabled(true);
 		scrollDescription.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-//		scrollDescription.setMinimumSize(new Dimension(300, 100));
 		scrollDescription.setPreferredSize(new Dimension(400, 20));
-//		scrollDescription.setMaximumSize(new Dimension(300, 100));
 
 		JTextArea explanation = new JTextArea();
 		explanation.setEditable(false);
@@ -116,6 +120,7 @@ public class StartingScreen {
 		return everything;
 	}
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {

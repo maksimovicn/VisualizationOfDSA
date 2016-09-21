@@ -25,8 +25,6 @@ public class MyDSA {
 	public static BigInteger v;
 	
 	
-	// Incrementally tries each BigInteger starting at the value passed
-	// in as a parameter until one of them is tests as being prime.
 	public static BigInteger getNextPrime(String ans) {
 		BigInteger test = new BigInteger(ans);
 		while (!test.isProbablePrime(99))
@@ -34,8 +32,6 @@ public class MyDSA {
 		return test;		
 	}
 	
-	// Finds largest prime factor of n, assuming n is
-	// composite. Not efficient.
 	public static BigInteger findQ(BigInteger n) {
 		
 		BigInteger start = new BigInteger("2");
@@ -55,7 +51,6 @@ public class MyDSA {
 		return n;
 	}
 	
-	// Returns a generator mod p.
 	public static BigInteger getG(BigInteger p, BigInteger q, Random r) {
 		// Pick the random value.
 		BigInteger h = new BigInteger(p.bitLength(), r);
@@ -65,7 +60,6 @@ public class MyDSA {
 		return h.modPow((p.subtract(one)).divide(q), p);
 	}
 	
-
 	public void generateParams(String test) {
 		p = getNextPrime(test);
 		q = findQ(p.subtract(one));
@@ -75,6 +69,7 @@ public class MyDSA {
 		y = g.modPow(x,p);
 		k = new BigInteger(q.bitLength(), new Random());
 		k = k.mod(q);
+		kInv = k.modInverse(q);
 	}
 	
 	public void sign(String message) {
@@ -88,8 +83,9 @@ public class MyDSA {
 		}
 		byte[] hash = md.digest(message.getBytes());
 		hashVal = new BigInteger(hash);
-				
+		
 		kInv = k.modInverse(q);
+		
 		s = kInv.multiply(hashVal.add(x.multiply(r)));
 		s = s.mod(q);
 
@@ -107,7 +103,6 @@ public class MyDSA {
 		
 		return v.equals(r);
 	}
-	
 	
 	private void setParameters() {
 		// TODO Auto-generated method stub

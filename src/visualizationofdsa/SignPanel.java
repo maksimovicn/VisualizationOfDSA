@@ -10,12 +10,19 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.JPanel;
 
 public class SignPanel extends JPanel {
+	
+	public JButton btnMsg;
+	public JButton btnH;
+	public JButton btnF1;
+	public JButton btnF2;
 
 	private Shape rectMsg = new Rectangle2D.Double(10, 10, 100, 200);
 	private Shape rectHash = new Rectangle2D.Double(170, 70, 80, 80);
@@ -30,6 +37,22 @@ public class SignPanel extends JPanel {
         shapes.add(rectHash);
         shapes.add(rectF1);
         shapes.add(rectF2);
+        setLayout(null);
+        btnMsg = new JButton("Msg");
+        btnMsg.setBounds(10, 10, 100, 200);
+        add(btnMsg);
+
+        btnH = new JButton("H");
+        btnH.setBounds(170, 70, 80, 80);
+        add(btnH);
+
+        btnF1 = new JButton("f1");
+        btnF1.setBounds(350, 70, 80, 80);
+        add(btnF1);
+
+        btnF2 = new JButton("f2");
+        btnF2.setBounds(170, 210, 80, 80);
+        add(btnF2);
         
     }
 
@@ -98,10 +121,10 @@ public class SignPanel extends JPanel {
         grphcs.drawLine(385, 155, 380, 150);
         
         
-        Graphics2D g2d = (Graphics2D) grphcs;
-        for (Shape s : shapes) {
-            g2d.draw(s);
-        }
+        //Graphics2D g2d = (Graphics2D) grphcs;
+        //for (Shape s : shapes) {
+          //  g2d.draw(s);
+        //}
     }
 
     @Override
